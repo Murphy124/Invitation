@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <link href="./yes_style.css" rel="stylesheet"/>
-
-    </head>
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">Ееееееее!!</h1>
-            </div>
-             <div class="gif_container">
-                <img src="https://i.postimg.cc/RVFpK1WN/image.gif">
-            </div>
-        </div>
-
-    </body>
+  <head>
+    <link href="./pages_style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">Ееееееее!!</h1>
+      </div>
+      <div class="gif_container">
+        <img src="https://i.postimg.cc/RVFpK1WN/image.gif" />
+      </div>
+      <div class="audio_container">
+        <audio controls loop autoplay src="Chipi_Chapa.mp3"></audio>
+      </div>
+      <div class="buttons">
+        <button class="btn" id="whereButton" onclick="wherePage()">
+          Посмотреть куда же...
+        </button>
+        <script>
+          function wherePage() {
+            window.location.href = "where.html";
+          }
+        </script>
+      </div>
+    </div>
+  </body>
 </html>
-

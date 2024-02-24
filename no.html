@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <link href="./yes_style.css" rel="stylesheet" />
+    <link href="./pages_style.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <div>
-        <h1 class="header_text">Ееееееее!!</h1>
+        <h1 class="header_text">Sound On</h1>
       </div>
       <div class="gif_container">
-        <img src="https://i.postimg.cc/RVFpK1WN/image.gif" />
-        <audio controls loop autoplay src="Chipi_Chapa.mp3"></audio>
+        <img
+          height="250px"
+          width="451px"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF7y7j4ScW5rMEXnHZVFVM1rzvSMaJ1A42U7IbHlr7ZT5cd1Mhk3mpvUpt6cF8NIFmqJs&usqp=CAU"
+        />
+      </div>
+      <div class="audio_container">
+        <audio controls loop autoplay src="Sad_Hamster.mp3"></audio>
+      </div>
+      <div class="buttons">
+        <button class="btn" id="backButton" onclick="indexPage()">
+          Передумать...
+        </button>
+        <script>
+          function indexPage() {
+            window.location.href = "index.html";
+          }
+        </script>
       </div>
     </div>
   </body>

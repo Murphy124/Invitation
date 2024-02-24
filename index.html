@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">Пойдешь гулять со мной?</h1>
+      </div>
+      <div class="gif_container">
+        <img src="https://i.postimg.cc/CKfWDG6j/first.gif" />
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="yesPage()">Да</button>
+        <button class="btn" id="noButton" onmouseover="" onclick="noPage()">
+          Нет
+        </button>
+        <script>
+          function yesPage() {
+            window.location.href = "yes.html";
+          }
+
+          function noPage() {
+            window.location.href = "no.html";
+          }
+
+          function moveButton() {
+            var x =
+              Math.random() *
+              (window.innerWidth -
+                document.getElementById("noButton").offsetWidth);
+            var y =
+              Math.random() *
+              (window.innerHeight -
+                document.getElementById("noButton").offsetHeight);
+            document.getElementById("noButton").style.left = `${x}px`;
+            document.getElementById("noButton").style.top = `${y}px`;
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

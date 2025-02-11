@@ -177,6 +177,49 @@
         background-color: #f44336;
         color: white;
       }
+
+      .button_next {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .button_next button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 130px;
+        transition: transform 0.2s ease;
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .button_final {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .button_final button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 130px;
+        transition: transform 0.2s ease;
+        background-color: #f44336;
+        color: white;
+      }
+
       .text-intro {
         color: black;
         position: absolute;
@@ -195,7 +238,7 @@
         color: white;
       }
 
-      .cat_gif2 {
+      .cat_gif {
         left: 25%;
       }
     </style>
@@ -224,11 +267,6 @@
                   ></a>
                 </div>
               </div>
-              <script
-                type="text/javascript"
-                async
-                src="https://tenor.com/embed.js"
-              ></script>
             </div>
             <div class="buttons" style="display: none">
               <button class="yes">Да</button>
@@ -239,7 +277,7 @@
               <p>У тебя теперь есть валентинка!</p>
 
               <div
-                class="tenor-gif-embed cat_gif2"
+                class="tenor-gif-embed cat_gif"
                 data-postid="21449058"
                 data-share-method="host"
                 data-aspect-ratio="0.99375"
@@ -248,6 +286,9 @@
                 <a
                   href="https://tenor.com/view/peach-and-goma-kiss-love-gif-21449058"
                 ></a>
+              </div>
+              <div class="button_next" style="display: none">
+                <button class="next">Далее</button>
               </div>
               <script
                 type="text/javascript"
@@ -260,7 +301,7 @@
               <p>Грустинка Грустинка Грустинка</p>
 
               <div
-                class="tenor-gif-embed cat_gif2"
+                class="tenor-gif-embed cat_gif"
                 data-postid="10704312894451489263"
                 data-share-method="host"
                 data-aspect-ratio="1.25962"
@@ -270,11 +311,50 @@
                   href="https://tenor.com/view/crying-gif-10704312894451489263"
                 ></a>
               </div>
-              <script
-                type="text/javascript"
-                async
-                src="https://tenor.com/embed.js"
-              ></script>
+            </div>
+            <div class="valentine-next" style="display: none">
+              <h1>Хехехехе</h1>
+              <p>
+                Приглашаю поехать со мной с ночёвкой в неизвестном загородном
+                направлении 14.02 в 18:00 (ну или как договоримся)
+              </p>
+
+              <div
+                class="tenor-gif-embed cat_gif"
+                data-postid="26807695"
+                data-share-method="host"
+                data-aspect-ratio="1.22137"
+                data-width="50%"
+              >
+                <a
+                  href="https://tenor.com/view/peach-goma-love-dampot-camping-gif-26807695"
+                ></a>
+              </div>
+              <div class="button_final" style="display: none">
+                <button class="final">Котенок приболел</button>
+              </div>
+            </div>
+            <div class="valentine-final" style="display: none">
+              <h1>Можем перенести</h1>
+              <p>
+                Напиши как думаешь, сможешь ли в пятницу вечером или лучше или
+                лучше перенести (на выходные или следующие выходные)
+              </p>
+
+              <div
+                class="tenor-gif-embed cat_gif"
+                data-postid="27285676"
+                data-share-method="host"
+                data-aspect-ratio="1"
+                data-width="50%"
+              >
+                <a
+                  href="https://tenor.com/view/tkthao219-bubududu-gif-27285676"
+                ></a>
+              </div>
+              <div class="button_final" style="display: none">
+                <button class="final">Котенок приболел</button>
+              </div>
             </div>
           </div>
           <div class="cord-wrapper">
@@ -531,6 +611,8 @@
         // Add event listeners for buttons
         const yesButton = document.querySelector(".buttons .yes");
         const noButton = document.querySelector(".buttons .no");
+        const nextButton = document.querySelector(".button_next .next");
+        const finalButton = document.querySelector(".button_final .final");
 
         yesButton.addEventListener("click", () => {
           const tl = new gsap.timeline();
@@ -539,12 +621,21 @@
             opacity: 0,
             duration: 0.5,
           });
+
           gsap.to(".valentine-congrats", {
             display: "block",
             opacity: 1,
             duration: 0.5,
             delay: 0.5,
           });
+
+          gsap.to(".button_next", {
+            display: "block",
+            opacity: 1,
+            duration: 0.5,
+            delay: 0.5,
+          });
+
           tl.to(".card", {
             width: window.innerWidth < 420 ? window.innerWidth : 800,
             height: 540,
@@ -599,19 +690,64 @@
             height: "100%",
             duration: 0.7,
           });
+        });
 
-          // confetti({
-          //     particleCount: 500,
-          //     spread: 150,
-          //     origin: { y: 0.6 },
-          // });
-          // setInterval(() => {
-          //     confetti({
-          //         particleCount: 500,
-          //         spread: 150,
-          //         origin: { y: 0.6 },
-          //     });
-          // }, 5000);
+        nextButton.addEventListener("click", () => {
+          const tl = new gsap.timeline();
+          gsap.to(".valentine-congrats, .button_next", {
+            display: "none",
+            opacity: 0,
+            duration: 0.5,
+          });
+          gsap.to(".valentine-next", {
+            display: "block",
+            opacity: 1,
+            duration: 0.5,
+            delay: 0.5,
+          });
+          gsap.to(".button_final", {
+            display: "block",
+            opacity: 1,
+            duration: 0.5,
+            delay: 0.5,
+          });
+          tl.to(".card", {
+            width: window.innerWidth < 420 ? window.innerWidth : 800,
+            height: 540,
+            duration: 1,
+            ease: "power2.in",
+          });
+          tl.to(".valentine-next", {
+            width: "100%",
+            height: "100%",
+            duration: 0.3,
+          });
+        });
+
+        finalButton.addEventListener("click", () => {
+          const tl = new gsap.timeline();
+          gsap.to(".valentine-next, .button_final", {
+            display: "none",
+            opacity: 0,
+            duration: 0.5,
+          });
+          gsap.to(".valentine-final", {
+            display: "block",
+            opacity: 1,
+            duration: 0.5,
+            delay: 0.5,
+          });
+          tl.to(".card", {
+            width: window.innerWidth < 420 ? window.innerWidth : 800,
+            height: 540,
+            duration: 1,
+            ease: "power2.in",
+          });
+          tl.to(".valentine-final", {
+            width: "100%",
+            height: "100%",
+            duration: 0.3,
+          });
         });
 
         noButton.addEventListener("mouseover", () => {

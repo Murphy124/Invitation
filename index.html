@@ -7,7 +7,7 @@
         padding: 0;
         box-sizing: border-box;
       }
-  
+
       body {
         width: 100vw;
         height: 100vh;
@@ -21,7 +21,7 @@
           Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
           sans-serif;
       }
-  
+
       #canvas-container {
         position: fixed;
         top: 0;
@@ -31,7 +31,7 @@
         pointer-events: none;
         z-index: 1;
       }
-  
+
       .wrapper {
         position: relative;
         width: 100vw;
@@ -43,7 +43,7 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
-  
+
       .heart {
         --c: red;
         width: 200px;
@@ -53,11 +53,11 @@
           conic-gradient(from -45deg at 50% 84%, var(--c) 90deg, #0000 0)
             bottom/100% 50% no-repeat;
       }
-  
+
       .card {
         position: relative;
         width: 300px;
-        height: 400px;
+        height: 580px;
         background: white;
         border-radius: 15px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -65,11 +65,11 @@
         transform-style: preserve-3d;
         transition: transform 0.5s ease;
       }
-  
+
       img {
         border-radius: 8px;
       }
-  
+
       .card-content {
         padding: 10px;
         opacity: 0;
@@ -80,15 +80,15 @@
         align-items: center;
         flex-direction: column;
       }
-  
+
       .card.open {
         transform: rotateX(0deg);
       }
-  
+
       .card.open .card-content {
         opacity: 1;
       }
-  
+
       .cord-wrapper {
         position: absolute;
         top: -100px;
@@ -98,7 +98,7 @@
         height: 200px;
         cursor: grab;
       }
-  
+
       .plug {
         position: absolute;
         bottom: 0;
@@ -111,11 +111,11 @@
         transform-origin: 50% 0%;
         z-index: 20;
       }
-  
+
       .plug:active {
         cursor: grabbing;
       }
-  
+
       .ribbon {
         position: absolute;
         top: 0;
@@ -125,31 +125,31 @@
         transform-origin: top;
         transform: translateX(-50%);
       }
-  
+
       .valentine-text {
         font-size: 24px;
         margin-bottom: 20px;
         color: #fe3a65;
       }
-  
+
       h1 {
         font-size: 32px;
         color: #fe3a65;
         margin-bottom: 20px;
       }
-  
+
       .valentine-congrats h1,
       .valentine-sad h1 {
         margin-bottom: 0px;
       }
-  
+
       .please,
       .congrats,
       .sad {
         width: 280px;
         /* height: 50px; */
       }
-  
+
       .buttons {
         display: flex;
         flex-wrap: nowrap;
@@ -157,7 +157,7 @@
         justify-content: center;
         gap: 12px;
       }
-  
+
       .buttons button {
         padding: 10px 20px;
         font-size: 16px;
@@ -167,12 +167,12 @@
         width: 130px;
         transition: transform 0.2s ease;
       }
-  
+
       .buttons button.yes {
         background-color: #4caf50;
         color: white;
       }
-  
+
       .buttons button.no {
         background-color: #f44336;
         color: white;
@@ -194,9 +194,13 @@
         font-size: 12px;
         color: white;
       }
+
+      .cat_gif2 {
+        left: 25%;
+      }
     </style>
   </head>
-  
+
   <html>
     <body>
       <div id="canvas-container"></div>
@@ -206,34 +210,71 @@
           <div class="card-content">
             <!-- <div class="heart"></div> -->
             <div class="valentine-text" style="display: none">
-              <h1>Will you be my valentine?</h1>
-              <img
-                src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2Vna2FkeDN2NHYxenduMXVuNTJ0MmJxZjI5dG16bXhoaGJuZmoxMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26FLdmIp6wJr91JAI/giphy.gif"
-                alt="please"
-                class="please"
-              />
+              <h1>Ты будешь моей валентинкой?</h1>
+
+              <div class="gif_cat">
+                <div
+                  class="tenor-gif-embed"
+                  data-postid="11275309671690135597"
+                  data-share-method="host"
+                  data-aspect-ratio="0.730924"
+                >
+                  <a
+                    href="https://tenor.com/view/wizard-cat-cat-wizard-witch-cat-cat-witch-cute-cat-gif-11275309671690135597"
+                  ></a>
+                </div>
+              </div>
+              <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"
+              ></script>
             </div>
             <div class="buttons" style="display: none">
-              <button class="yes">Yes</button>
-              <button class="no">No</button>
+              <button class="yes">Да</button>
+              <button class="no">Нет</button>
             </div>
             <div class="valentine-congrats" style="display: none">
-              <h1>Congratulations!</h1>
-              <p>You have a valentine now!</p>
-              <img
-                src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2EwcDRyYXZyNjUwb2h0ZmRnd3R3d2wzMWRvNGR0ejBnMjduaHprYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/n0IKF3qkeh671VAO45/giphy.gif"
-                alt="congrats"
-                class="congrats"
-              />
+              <h1>Поздравляю!</h1>
+              <p>У тебя теперь есть валентинка!</p>
+
+              <div
+                class="tenor-gif-embed cat_gif2"
+                data-postid="21449058"
+                data-share-method="host"
+                data-aspect-ratio="0.99375"
+                data-width="50%"
+              >
+                <a
+                  href="https://tenor.com/view/peach-and-goma-kiss-love-gif-21449058"
+                ></a>
+              </div>
+              <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"
+              ></script>
             </div>
             <div class="valentine-sad" style="display: none">
-              <h1>Whyyyyyyy!!!!!</h1>
-              <p>Life already has enough lemons.</p>
-              <img
-                src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTF4aHN4Y2FqMnlvdGRwYnF6ZG5nZ2l3emRxeXNvcXlyemZkbDJjYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kyrd72DC2Iwfu/giphy.gif"
-                alt="sad"
-                class="sad"
-              />
+              <h1>Почеееммууууу!!!!!</h1>
+              <p>Грустинка Грустинка Грустинка</p>
+
+              <div
+                class="tenor-gif-embed cat_gif2"
+                data-postid="10704312894451489263"
+                data-share-method="host"
+                data-aspect-ratio="1.25962"
+                data-width="50%"
+              >
+                <a
+                  href="https://tenor.com/view/crying-gif-10704312894451489263"
+                ></a>
+              </div>
+              <script
+                type="text/javascript"
+                async
+                src="https://tenor.com/embed.js"
+              ></script>
             </div>
           </div>
           <div class="cord-wrapper">
@@ -248,21 +289,21 @@
             <div class="ribbon"></div>
           </div>
         </div>
-        <div class="footer-text">Made with ❤️ by Shrikant</div>
+        <div class="footer-text"></div>
       </div>
-  
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  
+
       <script>
         // const urlParams = new URLSearchParams(window.location.search);
         // const name = urlParams.get("k"); // Get the value of "name"
         const introText = document.querySelector(".text-intro");
-        introText.innerHTML = `Hi You! Pull the cord.`;
+        introText.innerHTML = `Приветик :) Потяни за меня`;
         const engine = Matter.Engine.create();
         const world = engine.world;
-  
+
         const render = Matter.Render.create({
           element: document.getElementById("canvas-container"),
           engine: engine,
@@ -273,19 +314,19 @@
             background: "transparent",
           },
         });
-  
+
         // Create a chain of points for the ribbon
         const segments = 10;
         const segmentHeight = 150 / segments;
         const points = [];
         const constraints = [];
-  
+
         // Get card position
         const card = document.querySelector(".card");
         const cardRect = card.getBoundingClientRect();
         const startX = window.innerWidth / 2;
         const startY = cardRect.top;
-  
+
         // Create points
         for (let i = 0; i <= segments; i++) {
           const point = Matter.Bodies.circle(
@@ -306,7 +347,7 @@
           points.push(point);
           Matter.World.add(world, point);
         }
-  
+
         // Connect points with constraints
         for (let i = 0; i < points.length - 1; i++) {
           const constraint = Matter.Constraint.create({
@@ -324,64 +365,67 @@
           constraints.push(constraint);
           Matter.World.add(world, constraint);
         }
-  
+
         // Create and start the runner
         const runner = Matter.Runner.create();
         Matter.Runner.run(runner, engine);
         Matter.Render.run(render);
-  
+
         // Drag functionality
         let isDragging = false;
         const cordWrapper = document.querySelector(".cord-wrapper");
         const plug = document.querySelector(".plug");
         const ribbon = document.querySelector(".ribbon");
-  
+
         plug.addEventListener("mousedown", startDrag);
         plug.addEventListener("touchstart", startDrag);
         document.addEventListener("mousemove", drag);
         document.addEventListener("touchmove", drag);
         document.addEventListener("mouseup", endDrag);
         document.addEventListener("touchend", endDrag);
-  
+
         function startDrag(e) {
           e.preventDefault(); // Prevent default touch behavior
           isDragging = true;
           plug.style.cursor = "grabbing";
         }
-  
+
         function drag(e) {
           if (!isDragging) return;
-  
+
           // Get client coordinates for both mouse and touch events
           const clientX = e.clientX || e.touches[0].clientX;
           const clientY = e.clientY || e.touches[0].clientY;
-  
+
           const lastPoint = points[points.length - 1];
           Matter.Body.setPosition(lastPoint, {
             x: clientX,
             y: clientY,
           });
-  
+
           // Update ribbon visuals
           updateRibbon();
-  
+
           // Check if pulled far enough to open
-          if (clientY > cardRect.top + 300 && !card.classList.contains("open")) {
+          if (
+            clientY > cardRect.top + 300 &&
+            !card.classList.contains("open")
+          ) {
             openCard();
           }
         }
-  
+
         function updateRibbon() {
           const segments = points.length;
-  
+
           for (let i = 0; i < segments - 1; i++) {
             const current = points[i];
             const next = points[i + 1];
-  
+
             const dx = next.position.x - current.position.x;
             const dy = next.position.y - current.position.y;
             const angle = Math.atan2(dy, dx);
-  
+
             const segmentLength = Math.sqrt(dx * dx + dy * dy);
             gsap.set(ribbon, {
               height: segmentLength,
@@ -389,7 +433,7 @@
               x: current.position.x - startX,
               y: current.position.y - startY,
             });
-  
+
             // Update plug position and rotation
             if (i === segments - 2) {
               gsap.set(plug, {
@@ -401,15 +445,15 @@
             }
           }
         }
-  
+
         function endDrag() {
           isDragging = false;
           plug.style.cursor = "grab";
         }
-  
+
         function openCard() {
           card.classList.add("open");
-  
+
           // Shock effect (vibration)
           gsap.to(card, {
             y: "+=30",
@@ -420,28 +464,28 @@
               gsap.set(card, { x: 0 }); // Reset position after vibration
             },
           });
-  
+
           // Confetti effect
           confetti({
             particleCount: 300,
             spread: 100,
             origin: { y: 0.6 },
           });
-  
+
           // Morph plug
           gsap.to(".plug path", {
             duration: 0.5,
             attr: { d: "M30,0 L70,0 L85,30 L85,120 L15,120 L15,30 Z" },
             ease: "power2.inOut",
           });
-  
+
           // Show content
           gsap.to(".card-content", {
             opacity: 1,
             duration: 0.5,
             delay: 0.3,
           });
-  
+
           // Show valentine text and buttons
           gsap.to(".valentine-text, .buttons", {
             display: "block",
@@ -449,7 +493,7 @@
             duration: 0.5,
             delay: 0.5,
           });
-  
+
           // Hide ribbon and cord
           gsap.to([cordWrapper, ribbon], {
             opacity: 0,
@@ -459,14 +503,14 @@
               ribbon.style.display = "none";
             },
           });
-  
+
           const tl = new gsap.timeline();
           tl.to(".card", { rotateX: -10, duration: 0.2 })
             .to(".card", { rotateX: 0, duration: 0.1 })
             .to(".card", { rotateX: 10, duration: 0.14 })
             .to(".card", { rotateX: 0, duration: 0.05 })
             .repeat(2);
-  
+
           gsap.to(".text-intro", {
             opacity: 0,
             duration: 0.5,
@@ -474,7 +518,7 @@
               introText.style.display = "none";
             },
           });
-  
+
           // Hide Matter.js points and constraints
           points.forEach((point) => {
             point.render.visible = false;
@@ -483,11 +527,11 @@
             constraint.render.visible = false;
           });
         }
-  
+
         // Add event listeners for buttons
         const yesButton = document.querySelector(".buttons .yes");
         const noButton = document.querySelector(".buttons .no");
-  
+
         yesButton.addEventListener("click", () => {
           const tl = new gsap.timeline();
           gsap.to(".valentine-text, .buttons", {
@@ -511,7 +555,7 @@
             height: "100%",
             duration: 1,
           });
-  
+
           confetti({
             particleCount: 500,
             spread: 150,
@@ -525,7 +569,7 @@
             });
           }, 5000);
         });
-  
+
         noButton.addEventListener("click", () => {
           const tl = new gsap.timeline();
           gsap.to(".valentine-text, .buttons", {
@@ -555,7 +599,7 @@
             height: "100%",
             duration: 0.7,
           });
-  
+
           // confetti({
           //     particleCount: 500,
           //     spread: 150,
@@ -569,29 +613,29 @@
           //     });
           // }, 5000);
         });
-  
+
         noButton.addEventListener("mouseover", () => {
           const minDisplacement = 100; // Minimum move distance
           const maxDisplacement = 500; // Maximum move distance
-  
+
           const getRandomDisplacement = (min, max) => {
             let displacement = Math.random() * (max - min) + min;
             return Math.random() < 0.5 ? -displacement : displacement;
           };
-  
+
           const buttonRect = noButton.getBoundingClientRect();
           const viewportWidth = window.innerWidth - buttonRect.width;
           const viewportHeight = window.innerHeight - buttonRect.height;
-  
+
           let x = getRandomDisplacement(minDisplacement, maxDisplacement);
           let y = getRandomDisplacement(minDisplacement, maxDisplacement);
-  
+
           // Ensure button stays within screen boundaries
           if (buttonRect.left + x < 0) x = Math.abs(x); // Prevent moving past left boundary
           if (buttonRect.right + x > viewportWidth) x = -Math.abs(x); // Prevent moving past right boundary
           if (buttonRect.top + y < 0) y = Math.abs(y); // Prevent moving past top boundary
           if (buttonRect.bottom + y > viewportHeight) y = -Math.abs(y); // Prevent moving past bottom boundary
-  
+
           gsap.to(noButton, {
             x: `+=${x}`, // Move relative to current position
             y: `+=${y}`,
@@ -600,14 +644,14 @@
             ease: "power2.out",
           });
         });
-  
+
         // Update ribbon on animation frame
         function animate() {
           updateRibbon();
           requestAnimationFrame(animate);
         }
         animate();
-  
+
         // Initial card setup
         gsap.set(".card", {
           rotateX: 0,
@@ -615,4 +659,5 @@
         });
       </script>
     </body>
+  </html>
 </html>
